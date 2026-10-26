@@ -141,7 +141,7 @@ class ConnectedInducedSubgraphSpec
   std::vector<Vec2> neighborList;
 
   int takable(Mate const* mate, tdzdd::Graph::EdgeInfo const& e) const {
-    Mate const &w1 = mate[e.v1 - e.v0], w2 = mate[e.v2 - e.v0];
+    Mate const &w1 = mate[e.v1 - e.v0], &w2 = mate[e.v2 - e.v0];
 
     if (!w1.isComponent() && w1.isMarked()) {
       return 0;
